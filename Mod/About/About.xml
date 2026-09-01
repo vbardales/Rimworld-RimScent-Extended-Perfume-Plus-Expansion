@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RimScent Extended: Perfume Plus Expansion</name>
+	<author>nelim</author>
+	<packageId>nelim.rimscent.extended.perfumeplus</packageId>
+	<description>Everything a colonist wears, drinks or breathes that leaves a trace on them.
+
+RimScent's Perfume Expansion gives you five perfumes. This translates it into French — it ships no Languages folder at all — and wires up three more mods that built entire perfume lines without ever declaring a single scent.
+
+MOD PERFUMES (Romyashi)
+Five worn perfumes, plus aromaflower petals. The mod has a full perfumery — bottles, a still, a research project — and not one ModExtension_Scent anywhere in it. Each perfume now smells of what it is made from: flowers, cut greenery, the hunting blend that hides you, the ancient one recovered from ruins, and the anima perfume.
+
+The anima perfume comes from a separate module and carries a MayRequire on it. Its patch is wrapped in a nested conditional, and its translation lives in its own folder gated on the same mod — a translation key aimed at an absent def is a load error, not a warning.
+
+SOCIAL SUPPLEMENTS
+- The three worn "Scenters" — the same worn-scent thought the perfumes use.
+- Two vapes. The scent lasts exactly as long as the high does, the way vanilla smokeleaf already works.
+- Mouthwash, mint tea, the mint plant and its leaves: mint.
+- Chilli peppers and hot sauce: pepper in the air, mildly unpleasant.
+- Polyflower, its petals and its juice reuse RimScent's own flowery scent. The plant does not carry purpose="Beauty" — checked — so the base flower patch never caught it.
+
+Worn scents come from the hediff, not the item, which is the one thing RimScent reads on a neighbouring pawn. That is why they work at all.
+
+Ships in English with a French translation injected on top, so it works in any language. Each mod's support loads only when that mod is active. No save data.
+
+Requires RimScent, RimScent Extended and the Perfume Expansion.</description>
+	<modVersion>0.1.0</modVersion>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>reo.RimScent</packageId>
+			<displayName>RimScent</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3645569466</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>reo.rimscent.perfumeexpansion</packageId>
+			<displayName>RimScent: Perfume Expansion</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3649714034</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>nelim.rimscent.extended</packageId>
+			<displayName>RimScent Extended</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>reo.RimScent</li>
+		<li>reo.rimscent.perfumeexpansion</li>
+		<!-- Le socle porte RimScentExtended_Scent_WornScent, partage avec d'autres
+		     extensions, et les correctifs du moteur : il faut passer apres lui. -->
+		<li>nelim.rimscent.extended</li>
+		<!-- Les operations de patch s'appliquent dans l'ordre de chargement : il faut
+		     passer apres les mods vises, sinon les xpath ciblent des defs absents. -->
+		<li>romyashi.perfumes</li>
+		<li>romyashi.animaexpansion</li>
+		<li>mlie.socialsupplements</li>
+	</loadAfter>
+</ModMetaData>
