@@ -1,70 +1,70 @@
 # RimScent Extended: Perfume Plus Expansion
 
-Tout ce qu'un colon porte, boit ou respire et qui lui reste dessus. RimWorld 1.6.
+Everything a colonist wears, drinks or breathes that stays on them afterwards. For RimWorld 1.6.
 
-## Traduction de l'extension parfums
+## A translation for the perfume expansion
 
-L'[extension parfums](https://steamcommunity.com/sharedfiles/filedetails/?id=3649714034)
-n'a **aucun dossier `Languages`**. Ses 16 defs sont traduits ici : 5 hediffs, 5 pensées,
-5 parfums, la recherche. Comme c'est une dépendance dure, la traduction est à la racine du
-mod, sans `IfModActive`.
+The [perfume expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=3649714034) has
+**no `Languages` folder at all**. Its 16 defs are translated here: 5 hediffs, 5 thoughts,
+5 perfumes, the research. Since it is a hard dependency, the translation sits at the root of the
+mod, with no `IfModActive`.
 
-## Mod Perfumes (Romyashi)
+## The Perfumes mod (Romyashi)
 
-Le mod a toute une parfumerie — flacons, alambic, recherche — et **pas une seule
-`ModExtension_Scent`**. Chaque parfum sent désormais ce dont il est fait :
+The mod has a whole perfumery — bottles, still, research — and **not one
+`ModExtension_Scent`**. Each perfume now smells of what it is made from:
 
-| Parfum | Odeur |
+| Perfume | Smell |
 |---|---|
-| floral | fleurs |
-| végétal | verdure coupée |
-| de chasse | le mélange qui masque |
-| ancien | retrouvé dans les ruines |
-| d'anima | l'arbre |
-| pétales d'aromafleur | réutilise `RimScent_FloweryScent` |
+| floral | flowers |
+| herbal | cut greenery |
+| hunting | the blend that masks |
+| ancient | recovered from ruins |
+| anima | the tree |
+| aromafleur petals | reuses `RimScent_FloweryScent` |
 
-Le parfum d'anima vient d'un module séparé et porte un `MayRequire` dessus. Deux pièges
-traités :
+The anima perfume comes from a separate module and carries a `MayRequire` for it. Two traps
+handled:
 
-- son patch est enveloppé dans un conditionnel imbriqué — si le def n'existe pas, rien ne
-  se produit et aucune erreur n'est levée ;
-- **sa traduction est isolée** dans `RomyPerfumesAnima/`, conditionné au même mod : une clé
-  qui vise un def absent est une erreur de chargement, pas un avertissement.
+- its patch is wrapped in a nested conditional — if the def does not exist, nothing happens and
+  no error is raised;
+- **its translation is isolated** in `RomyPerfumesAnima/`, gated on the same mod: a key aimed at
+  a missing def is a load error, not a warning.
 
 ## Social Supplements
 
-| Cible | Odeur |
+| Target | Smell |
 |---|---|
-| les 3 « Scenters » portés (hediffs) | parfum porté, +3 |
-| 2 vapotages (hediffs) | nuage de vapeur, −1 |
-| bain de bouche, thé à la menthe, plante et feuilles de menthe | menthe, +2 |
-| piments, sauce piquante | piment dans l'air, −1 |
-| polyfleur, pétales, jus | **réutilise** `RimScent_FloweryScent` |
+| the 3 worn "Scenters" (hediffs) | worn perfume, +3 |
+| 2 vape hediffs | vapour cloud, −1 |
+| mouthwash, mint tea, mint plant and leaves | mint, +2 |
+| chillies, hot sauce | pepper in the air, −1 |
+| polyflower, petals, juice | **reuses** `RimScent_FloweryScent` |
 
-L'odeur du vapotage dure exactement ce que dure l'effet, comme `SmokeleafHigh` en amont.
+The vape smell lasts exactly as long as the effect does, like `SmokeleafHigh` upstream.
 
-La polyfleur ne porte **pas** `purpose="Beauty"` — vérifié — donc le patch fleurs générique
-ne l'attrapait pas.
+The polyflower does **not** carry `purpose="Beauty"` — checked — so the generic flower patch was
+not catching it.
 
-## Pourquoi les odeurs portées fonctionnent
+## Why worn scents work at all
 
-RimScent ne lit sur un pion voisin **que ses `HediffDef`**. Un parfum posé sur l'objet ne
-sentirait rien une fois le flacon rangé ; posé sur le hediff que le flacon applique, il suit
-le colon. C'est le seul point d'accroche disponible, et c'est celui que ces mods offraient
-déjà sans le savoir.
+On a neighbouring pawn, RimScent reads **only their `HediffDef`s**. A perfume put on the item
+would smell of nothing once the bottle is shelved; put on the hediff the bottle applies, it
+follows the colonist. It is the only hook available, and it is the one these mods were already
+offering without knowing it.
 
-`RimScentExtended_Scent_WornScent` est partagé avec d'autres extensions et reste donc
-**déclaré dans le socle**.
+`RimScentExtended_Scent_WornScent` is shared with other expansions and is therefore **declared
+in the socle**.
 
-## Dépendances
+## Requirements
 
 - [RimScent](https://steamcommunity.com/sharedfiles/filedetails/?id=3645569466)
 - [RimScent: Perfume Expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=3649714034)
-- RimScent Extended (le socle)
+- RimScent Extended (the socle)
 
-Perfumes, Anima Expansion et Social Supplements ne sont pas requis : chaque volet ne se
-charge que si son mod est actif, via `LoadFolders.xml`. Rien n'est écrit dans la sauvegarde.
+Perfumes, Anima Expansion and Social Supplements are not required: each section loads only if its
+mod is active, through `LoadFolders.xml`. Nothing is written to the save.
 
 ## Licence
 
-MIT — voir [LICENSE](LICENSE) et [ATTRIBUTION.md](ATTRIBUTION.md).
+MIT — see [LICENSE](LICENSE) and [ATTRIBUTION.md](ATTRIBUTION.md).
