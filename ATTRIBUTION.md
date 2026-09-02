@@ -1,28 +1,27 @@
 # Attribution
 
-## RimScent, et son extension parfums
+## RimScent, and its perfume expansion
 
-par **reo / ocarina0001** — MIT.
+by **reo / ocarina0001** — MIT.
 
 - [RimScent](https://steamcommunity.com/sharedfiles/filedetails/?id=3645569466)
 - [RimScent: Perfume Expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=3649714034)
 
-Mod compagnon, pas un fork. Aucun fichier de l'un ou de l'autre n'est copié ni redistribué.
-Les deux sont déclarés en dépendances dures ; on utilise `RimScentReworked.ModExtension_Scent`,
-leur propre point d'extension public, et on réutilise leur `RimScent_FloweryScent` là où elle
-convient plutôt que d'en créer une de plus.
+A companion mod, not a fork. No file from either is copied or redistributed. Both are declared
+as hard dependencies; we use `RimScentReworked.ModExtension_Scent`, their own public extension
+point, and reuse their `RimScent_FloweryScent` where it fits rather than adding one more.
 
-La traduction française de l'extension parfums est un travail original.
+The French translation of the perfume expansion is original work.
 
-## Mods lus par cette extension
+## Mods read by this expansion
 
-Rien n'en est copié. Chacun est visé uniquement par des `PatchOperation`, dans un dossier
-qui ne se charge que si le mod est actif :
+Nothing is copied from them. Each is targeted only by `PatchOperation`s, in a folder that loads
+only if the mod is active:
 
-- **Perfumes** (`romyashi.perfumes`) et son module **Anima Expansion**
+- **Perfumes** (`romyashi.perfumes`) and its **Anima Expansion** module
   (`romyashi.animaexpansion`).
 - **Social Supplements** (`mlie.socialsupplements`).
 
-## Ce mod
+## This mod
 
-MIT, © nelim. Defs, patchs et traductions sont un travail original.
+MIT, © nelim. Defs, patches and translations are original work.
