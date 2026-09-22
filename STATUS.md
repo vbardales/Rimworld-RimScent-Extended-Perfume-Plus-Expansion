@@ -7,7 +7,7 @@ packageId:    nelim.rimscent.extended.perfumeplus
 repo:         Rimworld-RimScent-Extended-Perfume-Plus-Expansion
 visibility:   public
 detached:     no
-stage:        dansMonoRepo
+stage:        horsMonoRepo
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -16,10 +16,9 @@ settings_audit: not_applicable
 tested_on:
 workshop:
 remaining:
-  - unverified: initial commit a9b0a8b is local; the configured GitHub remote push has not been verified
   - unverified: never seen running; no in-game, Pickle, English/French UI, optional-integration, or log validation
-session:      "audit and independent-repository initialization: 2026-09-22"
-updated:      2026-09-22, AUDIT.md workflow audit; local Git initialization
+session:      "audit, independent-repository initialization, and first push: 2026-09-22"
+updated:      2026-09-22, AUDIT.md workflow audit; GitHub master verified
 ---
 
 # RimScent Extended: Perfume Plus Expansion — status
@@ -34,12 +33,12 @@ Static audit source: monorepo commit `cf5553d5c99590504fe80fd664cc30aec16c82ba` 
 After that audit, this directory was initialized as an independent Git repository with local root
 commit `a9b0a8bbd41f4b5051099a674aedb1788aff14fe` (2026-09-22). No RimWorld instance was launched.
 
-### dansMonoRepo
+### horsMonoRepo
 
-Validated as the last cumulative stage. This directory now has its own `.git` repository, an
+Validated as the last cumulative stage. This directory has its own `.git` repository, an
 `origin` configured for `https://github.com/vbardales/Rimworld-RimScent-Extended-Perfume-Plus-Expansion.git`,
-and the local root commit noted above; it is not a subtree. `CHANGELOG.md` is present.
-The required first push has not been verified, so it remains the sole blocker for `horsMonoRepo`.
+and root commit `fc9c750ba512e0f9876386c099a1200023add5de`; it is not a subtree. `CHANGELOG.md`
+is present. `master` was pushed and its upstream was verified at the same commit on 2026-09-22.
 
 The identity is internally coherent (`nelim.rimscent.extended.perfumeplus`, package name and folder),
 the public/open-MIT claim is backed by `LICENSE` and `ATTRIBUTION.md`, and README/attribution are
@@ -82,7 +81,7 @@ test stage.
 
 ## Next transition
 
-Strictly necessary for `horsMonoRepo`: push local root commit `a9b0a8b` to the configured GitHub
-remote and verify its upstream. The already validated icon, preview, settings decision, dependency
-declarations, and static localization results remain independent evidence; they do not establish
-gameplay or in-game UI behavior.
+Strictly necessary for `ModIcon générée`: finish the development/build readiness review required by
+that transition. The already validated icon, preview, settings decision, dependency declarations,
+and static localization results remain independent evidence; they do not establish gameplay or
+in-game UI behavior.
