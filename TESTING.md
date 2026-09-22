@@ -26,11 +26,12 @@ powershell -ExecutionPolicy Bypass -File ../scripts/Check-DefInjected.ps1 -Trans
 
 This repository owns XML definitions, translations, and `PatchOperation` declarations only. It
 has no assembly, settings, UI, save data, custom callback, or player interaction. The offline
-contract test covers the declarations the repository owns; testing RimWorld's dependency loading,
-language switching, or RimScent's scent scanning would test those systems rather than this mod.
+contract test covers the declarations the repository owns. It does not prove that RimWorld loaded
+each optional patch and produced the intended runtime `HediffDef` extension.
 
-Therefore Pickle/Gherkin is `not_applicable` for the `preTest -> done` gate. A future Pickle
-feature is required if this mod gains player-facing interaction, persistence, a custom callback,
-or other behavior that cannot be reduced to these XML contracts. Runtime integration, English and
-French display, and log validation remain required evidence for `done -> tested` and must use the
-shared WSL harness when requested.
+`Tests/Pickle/` therefore contains the narrowly scoped `done -> tested` runtime suite. Its local
+step reads each loaded target `HediffDef` after patch application and confirms that its
+`RimScentReworked.ModExtension_Scent` references the expected thought. It deliberately does not
+test RimWorld's dependency loading/language switch or RimScent's scanner. Build it with the command
+in `Tests/Pickle/README.md`, stage each optional target through a verified named dependency map,
+and run each feature in English and French using the shared WSL harness.

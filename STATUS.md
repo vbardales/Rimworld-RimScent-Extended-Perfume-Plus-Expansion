@@ -94,11 +94,11 @@ nine owned thoughts and their mood effects, patch-reference branches, hard depen
 folder gates, 60 French DefInjected entries, and delivered image limits all passed. `TESTING.md`
 records the command and complementary shared 1.6 validator commands.
 
-Pickle/Gherkin is explicitly `not_applicable` at this gate: this XML-only mod owns no UI,
-interaction, persistence, callback, or other runtime behavior beyond the contracts checked
-offline. A Pickle scenario would exercise RimWorld dependency loading/language selection or
-RimScent's scanner instead of a behavior owned by this repository. The tests are proportionate
-to the delivered version; there is no C# build artifact to compile.
+The offline test remains proportionate to the `preTest -> done` gate. A narrowly scoped Pickle
+suite was subsequently added for `done -> tested`: it reads loaded target `HediffDef` objects and
+checks that their runtime `ModExtension_Scent` references the intended thought. The local step
+assembly builds with zero warnings; its execution is deliberately not claimed here. There is no
+player-facing settings/UI or persistence scenario for this mod.
 
 ## Next transition: done -> tested
 
