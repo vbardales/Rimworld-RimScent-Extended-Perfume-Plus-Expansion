@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+	<v1.6>
+		<!-- Racine : About, et la traduction de l'extension parfums, dependance dure. -->
+		<li>/</li>
+		<!-- Une cle DefInjected qui vise un def absent est une erreur de chargement,
+		     d'ou le decoupage par IfModActive plutot qu'un dossier unique. -->
+		<li IfModActive="romyashi.perfumes">RomyPerfumes</li>
+		<li IfModActive="romyashi.animaexpansion">RomyPerfumesAnima</li>
+		<li IfModActive="mlie.socialsupplements">SocialSupplements</li>
+	</v1.6>
+</loadFolders>
