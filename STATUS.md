@@ -7,7 +7,7 @@ packageId:    nelim.rimscent.extended.perfumeplus
 repo:         Rimworld-RimScent-Extended-Perfume-Plus-Expansion
 visibility:   public
 detached:     no
-stage:        horsMonoRepo
+stage:        preTest
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -16,9 +16,10 @@ settings_audit: not_applicable
 tested_on:
 workshop:
 remaining:
+  - defect: no automated-test or Pickle/Gherkin scenario artifacts are present for the required preTest -> done gate
   - unverified: never seen running; no in-game, Pickle, English/French UI, optional-integration, or log validation
-session:      "audit, independent-repository initialization, and first push: 2026-09-22"
-updated:      2026-09-22, AUDIT.md workflow audit; GitHub master verified
+session:      "audit, independent-repository initialization, first push, and static stage review: 2026-09-22"
+updated:      2026-09-22, AUDIT.md workflow audit; GitHub master verified; advanced to preTest
 ---
 
 # RimScent Extended: Perfume Plus Expansion — status
@@ -33,12 +34,20 @@ Static audit source: monorepo commit `cf5553d5c99590504fe80fd664cc30aec16c82ba` 
 After that audit, this directory was initialized as an independent Git repository with local root
 commit `a9b0a8bbd41f4b5051099a674aedb1788aff14fe` (2026-09-22). No RimWorld instance was launched.
 
-### horsMonoRepo
+### horsMonoRepo -> preTest
 
 Validated as the last cumulative stage. This directory has its own `.git` repository, an
 `origin` configured for `https://github.com/vbardales/Rimworld-RimScent-Extended-Perfume-Plus-Expansion.git`,
 and root commit `fc9c750ba512e0f9876386c099a1200023add5de`; it is not a subtree. `CHANGELOG.md`
 is present. `master` was pushed and its upstream was verified at the same commit on 2026-09-22.
+
+The independent static checks establish the intermediate `ModIcon générée`, `Preview générée`,
+`preOptions`, `options`, and `l10n` transitions: no unfinished-work markers were found; the
+delivered icon and preview meet the documented dimensions; the preview directly shows distinct
+amber, blue, and purple accents; `About.xml` has an English description and the conventional
+visual suffixes `Extended` and `Plus`; the settings decision is justified `not_applicable`; and
+the static EN/FR localization audit is complete. The dependency scan below also establishes the
+`l10n -> preTest` dependency declaration/load-order criterion.
 
 The identity is internally coherent (`nelim.rimscent.extended.perfumeplus`, package name and folder),
 the public/open-MIT claim is backed by `LICENSE` and `ATTRIBUTION.md`, and README/attribution are
@@ -79,9 +88,10 @@ as a gated translation, matching its `RomyPerfumesAnima` load folder. No code-ow
 exists to require Keyed resources. Runtime EN/FR display remains unverified until a later in-game
 test stage.
 
-## Next transition
+## Next transition: preTest -> done
 
-Strictly necessary for `ModIcon générée`: finish the development/build readiness review required by
-that transition. The already validated icon, preview, settings decision, dependency declarations,
-and static localization results remain independent evidence; they do not establish gameplay or
-in-game UI behavior.
+Write and run proportionate automated and XML test artifacts, and write the narrowly scoped
+Pickle/Gherkin scenarios for behavior that only a running game can show. No such test or feature
+artifacts are present today. The existing structural XML, fields, references, localization, and
+asset checks remain valid independent evidence; they do not establish gameplay or in-game UI
+behavior.
