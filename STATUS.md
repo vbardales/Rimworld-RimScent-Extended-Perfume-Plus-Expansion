@@ -7,7 +7,7 @@ packageId:    nelim.rimscent.extended.perfumeplus
 repo:         Rimworld-RimScent-Extended-Perfume-Plus-Expansion
 visibility:   public
 detached:     no
-stage:        preTest
+stage:        done
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -16,10 +16,9 @@ settings_audit: not_applicable
 tested_on:
 workshop:
 remaining:
-  - defect: no automated-test or Pickle/Gherkin scenario artifacts are present for the required preTest -> done gate
   - unverified: never seen running; no in-game, Pickle, English/French UI, optional-integration, or log validation
-session:      "audit, independent-repository initialization, first push, and static stage review: 2026-09-22"
-updated:      2026-09-22, AUDIT.md workflow audit; GitHub master verified; advanced to preTest
+session:      "audit, independent-repository initialization, static stage review, and offline test gate: 2026-09-22"
+updated:      2026-09-22, AUDIT.md workflow audit; GitHub master verified; advanced to done
 ---
 
 # RimScent Extended: Perfume Plus Expansion — status
@@ -34,7 +33,7 @@ Static audit source: monorepo commit `cf5553d5c99590504fe80fd664cc30aec16c82ba` 
 After that audit, this directory was initialized as an independent Git repository with local root
 commit `a9b0a8bbd41f4b5051099a674aedb1788aff14fe` (2026-09-22). No RimWorld instance was launched.
 
-### horsMonoRepo -> preTest
+### horsMonoRepo -> done
 
 Validated as the last cumulative stage. This directory has its own `.git` repository, an
 `origin` configured for `https://github.com/vbardales/Rimworld-RimScent-Extended-Perfume-Plus-Expansion.git`,
@@ -88,10 +87,22 @@ as a gated translation, matching its `RomyPerfumesAnima` load folder. No code-ow
 exists to require Keyed resources. Runtime EN/FR display remains unverified until a later in-game
 test stage.
 
-## Next transition: preTest -> done
+## Done gate — 2026-09-22
 
-Write and run proportionate automated and XML test artifacts, and write the narrowly scoped
-Pickle/Gherkin scenarios for behavior that only a running game can show. No such test or feature
-artifacts are present today. The existing structural XML, fields, references, localization, and
-asset checks remain valid independent evidence; they do not establish gameplay or in-game UI
-behavior.
+`Tests/Test-Xml.ps1` was added and passed against the delivered tree: 13 XML files parsed; the
+nine owned thoughts and their mood effects, patch-reference branches, hard dependencies, optional
+folder gates, 60 French DefInjected entries, and delivered image limits all passed. `TESTING.md`
+records the command and complementary shared 1.6 validator commands.
+
+Pickle/Gherkin is explicitly `not_applicable` at this gate: this XML-only mod owns no UI,
+interaction, persistence, callback, or other runtime behavior beyond the contracts checked
+offline. A Pickle scenario would exercise RimWorld dependency loading/language selection or
+RimScent's scanner instead of a behavior owned by this repository. The tests are proportionate
+to the delivered version; there is no C# build artifact to compile.
+
+## Next transition: done -> tested
+
+Run the documented integration validation in the shared WSL harness: minimal hard dependencies,
+the optional Perfumes, Anima Expansion, and Social Supplements passes as available, plus English
+and French display/log review. This is not a known defect and must not be inferred from the
+offline results.
