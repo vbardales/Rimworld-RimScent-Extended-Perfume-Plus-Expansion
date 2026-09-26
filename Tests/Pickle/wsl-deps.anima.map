@@ -3,7 +3,7 @@
 # explicitly here so the staging run remains closed over all non-core mods.
 #
 # packageId                              workshopId or local source
-nelim.rimscent.extended                  path:RimScentExtended
+nelim.rimscent.extended                  path:RimScentExtended/Mod
 Romyashi.BunnyFramework                  3015333853
 Romyashi.Perfumes                        3013711969
 Romyashi.AnimaExpansion                  3532147582

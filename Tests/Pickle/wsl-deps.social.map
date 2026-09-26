@@ -3,6 +3,6 @@
 # named here explicitly so the optional target cannot start without it.
 #
 # packageId                              workshopId or local source
-nelim.rimscent.extended                  path:RimScentExtended
+nelim.rimscent.extended                  path:RimScentExtended/Mod
 Mlie.MedicalSupplements                  2195037369
 Mlie.SocialSupplements                   2195052690

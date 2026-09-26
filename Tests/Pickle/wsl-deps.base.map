@@ -4,4 +4,4 @@
 # definitions-only extension loads safely in its declared minimal mod set.
 #
 # packageId                              workshopId or local source
-nelim.rimscent.extended                  path:RimScentExtended
+nelim.rimscent.extended                  path:RimScentExtended/Mod
