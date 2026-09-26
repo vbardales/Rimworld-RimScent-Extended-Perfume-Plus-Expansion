@@ -1,0 +1,7 @@
+# Perfumes integration. RimScent Extended is a local Git checkout, not a
+# Workshop dependency; the staging script verifies the target package identity
+# before activation.
+#
+# packageId                              workshopId or local source
+nelim.rimscent.extended                  path:RimScentExtended
+Romyashi.Perfumes                        3013711969

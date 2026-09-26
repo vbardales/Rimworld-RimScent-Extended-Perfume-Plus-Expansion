@@ -1,0 +1,8 @@
+# Social Supplements integration. Social Supplements declares Harmony and
+# Medical Supplements. Harmony belongs to the Pickle baseline; Medical is
+# named here explicitly so the optional target cannot start without it.
+#
+# packageId                              workshopId or local source
+nelim.rimscent.extended                  path:RimScentExtended
+Mlie.MedicalSupplements                  2195037369
+Mlie.SocialSupplements                   2195052690

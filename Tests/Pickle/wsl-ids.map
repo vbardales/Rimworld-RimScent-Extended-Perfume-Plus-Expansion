@@ -1,0 +1,6 @@
+# Hard dependencies of the mod under test. The staging script reads this map in
+# every pass, including a pass that has no optional integration overlay.
+#
+# packageId                         workshopId
+reo.RimScent                        3645569466
+reo.rimscent.perfumeexpansion       3649714034

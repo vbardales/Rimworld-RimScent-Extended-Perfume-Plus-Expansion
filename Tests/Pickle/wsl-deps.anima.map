@@ -1,0 +1,8 @@
+# Anima Expansion integration. Its About.xml declares Royalty and Bunny
+# Framework; Royalty is supplied by the standard game set and Bunny is named
+# explicitly here so the staging run remains closed over all non-core mods.
+#
+# packageId                              workshopId or local source
+nelim.rimscent.extended                  path:RimScentExtended
+Romyashi.BunnyFramework                  3015333853
+Romyashi.AnimaExpansion                  3532147582
