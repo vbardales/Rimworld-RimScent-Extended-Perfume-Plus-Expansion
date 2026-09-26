@@ -1,0 +1,7 @@
+# Minimal pass: the locally checked out RimScent Extended hard dependency only.
+# All feature scenarios are conditional on optional integrations and therefore
+# intentionally skip here; the fresh startup log is the evidence that this
+# definitions-only extension loads safely in its declared minimal mod set.
+#
+# packageId                              workshopId or local source
+nelim.rimscent.extended                  path:RimScentExtended
