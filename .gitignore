@@ -1,2 +1,4 @@
 **/bin/
 **/obj/
+*.dds
+Tests/Pickle/Evidence/

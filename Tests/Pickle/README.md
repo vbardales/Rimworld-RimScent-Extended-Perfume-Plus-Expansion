@@ -22,3 +22,18 @@ checkout. The package identities were read from the locally installed Workshop c
 
 No scenario has been executed or visually reviewed. Their execution, report review, and startup-log
 review are all evidence for `done -> tested`.
+
+## Evidence retention
+
+Pass `-EvidenceDir RimScentExtendedPerfumePlusExpansion/Tests/Pickle/Evidence/<run-name>` for
+each submitted pass. The copied report, startup log, and any capture stay on disk only under the
+ignored `Tests/Pickle/Evidence/` folder; they are not Git artifacts. After reviewing a successful
+pass, retain only its most useful complete evidence set for this mod version (the final English or
+French pass that includes the report and startup log), deleting superseded copies. Commit instead a
+short factual summary in `docs/runs/` that identifies the tested commit, pass set, language,
+scenario counts, `exitReason`, and retained evidence directory.
+
+There are no `@review` scenarios, settings, UI, persistence, save migration, or MainButtons
+shortcut in this definitions-only mod. Those manual checks are therefore not applicable; the
+runtime obligation is fully covered by the conditional HediffDef integration scenarios in English
+and French.

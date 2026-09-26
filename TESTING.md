@@ -35,3 +35,9 @@ step reads each loaded target `HediffDef` after patch application and confirms t
 test RimWorld's dependency loading/language switch or RimScent's scanner. Build it with the command
 in `Tests/Pickle/README.md`, stage each optional target through a verified named dependency map,
 and run each feature in English and French using the shared WSL harness.
+# Evidence retention
+
+Pickle evidence is stored locally in the ignored `Tests/Pickle/Evidence/` directory. Keep one
+complete, reviewed evidence set per delivered revision, and delete superseded reports, logs, and
+captures after recording a concise result in `docs/runs/`. Never commit raw Pickle evidence or
+`.dds` files.
